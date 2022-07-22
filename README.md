@@ -4,7 +4,7 @@ triple_click_v2.au3 - select line by clicking middle mouse button intended to wo
 
 change_case_v1.au3 - press ctrl + alt + up/down/right to change case to UPPER/lower/Proper case.
 
-change_case_v1.au3 - press ctrl + alt + left replace newlines with ". ".
+change_case_v3.au3 - press ctrl + alt + left replace newlines with ". ".
 
 change_case_v4.au3 - press ctrl + alt + left to find and replace in selected text.
 
