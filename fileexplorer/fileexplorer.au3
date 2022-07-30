@@ -17,15 +17,25 @@ EndFunc
 
 ;new text file
 Func newtextfile()
-	$pos = MouseGetPos()
-	SearchAndClick("newitem");
+	_SendEx("{CTRLDOWN}")
+	MouseClick("right")
+	_SendEx("{CTRLUP}")
+	sleep(100);
+	_SendEx("+w");
 	SearchAndClick("newtextfile");
-	MouseMove($pos[0],$pos[1]);
 EndFunc
 
 ;search and click
 Func SearchAndClick($imageName, $offsetX="", $offsetY="")
+	$pos = MouseGetPos();
 	Local $image = _ImageSearch(@ScriptDir & "\"& $imageName & ".bmp")
 	MouseClick("left", $image[1]+$offsetX, $image[2]+$offsetY);
-	Sleep(200);
+	MouseMove($pos[0],$pos[1]);
+	Sleep(100);
 EndFunc
+
+
+
+
+
+
