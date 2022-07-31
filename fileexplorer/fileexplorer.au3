@@ -7,6 +7,35 @@ HotKeySet("^!{SPACE}","search")
 HotKeySet("^!n","newfolder")
 HotKeySet("^!t","newtextfile")
 HotKeySet("^!w","wrap")
+HotKeySet("^!r","readonly")
+HotKeySet("^!a","showattributes")
+
+;show attributes column
+func showattributes()
+	_SendEx("{ALTDOWN}")
+	Sleep(100)
+	_SendEx("{ALTUP}")
+	Send("v")
+	Send("a")
+	Send("{UP}")
+	Send("{ENTER}")
+	Sleep(250)
+	Send("attr")
+	Send("{SPACE}")
+	Sleep(250)
+	Send("{ENTER}")
+
+EndFunc
+
+func readonly()
+	_SendEx("{CTRLDOWN}")
+	MouseClick("right")
+	_SendEx("{CTRLUP}")
+	Send("r")
+	sleep(250)
+	Send("r")
+	Send("{ENTER}")
+EndFunc
 
 Func newfolder()
 	_SendEx("^+n");
@@ -57,13 +86,13 @@ Func wrap()
 EndFunc
 
 ;search and click
-Func SearchAndClick($imageName, $offsetX="", $offsetY="")
-	$pos = MouseGetPos();
-	Local $image = _ImageSearch(@ScriptDir & "\"& $imageName & ".bmp")
-	MouseClick("left", $image[1]+$offsetX, $image[2]+$offsetY);
-	MouseMove($pos[0],$pos[1]);
-	Sleep(100);
-EndFunc
+;Func SearchAndClick($imageName, $offsetX="", $offsetY="")
+	;$pos = MouseGetPos();
+	;Local $image = _ImageSearch(@ScriptDir & "\"& $imageName & ".bmp")
+	;MouseClick("left", $image[1]+$offsetX, $image[2]+$offsetY);
+	;MouseMove($pos[0],$pos[1]);
+	;Sleep(100);
+;EndFunc
 
 
 
