@@ -10,4 +10,12 @@ change_case_v4.au3 - press ctrl + alt + left to find and replace in selected tex
 
 notepad.au3 - press ctrl + alt + n to launch notepad.
 
+fileexplorer.au3
+
+press ctrl + alt + n to create a new text file in file explorer
+
+press ctr + alt + n to create a new folder
+
+press ctrl + alt + w to wrap a file in a folder of the same name
+
 
