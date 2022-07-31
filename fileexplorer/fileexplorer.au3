@@ -1,8 +1,17 @@
-#include "_ImageSearch_UDF.au3"
+;#include "_ImageSearch_UDF.au3"
 #include <_SendEx.au3>
 
+
+HotKeySet("{Esc}", "_Exit")
 HotKeySet("^!{SPACE}","search")
-HotKeySet("^!n","newtextfile")
+HotKeySet("^!n","newfolder")
+HotKeySet("^!t","newtextfile")
+HotKeySet("^!w","wrap")
+
+Func newfolder()
+	_SendEx("^+n");
+EndFunc
+
 
 ;search using everything
 Func search()
@@ -21,8 +30,30 @@ Func newtextfile()
 	MouseClick("right")
 	_SendEx("{CTRLUP}")
 	sleep(100);
-	_SendEx("+w");
-	SearchAndClick("newtextfile");
+	_SendEx("wt");
+	;SearchAndClick("newtextfile");
+EndFunc
+
+;wrap a text file in a folder with the same name
+Func wrap()
+
+	;User to select file
+	_SendEx("^x");cut the file
+	_SendEx("^+n");;create new folder
+	Send("{ENTER}");
+	Send("{ENTER}");
+	Sleep(250);
+	Send("^v");
+	Sleep(250);
+	_SendEx("{F2}");copy file name
+	Send("^c");
+	Send("{ENTER}");
+	Send("{BACKSPACE}");
+	Sleep(100);
+	Send("{F2}")
+	Send("^v");
+	Send("{ENTER}");
+
 EndFunc
 
 ;search and click
@@ -39,3 +70,7 @@ EndFunc
 
 
 
+;exit
+Func _Exit()
+	Exit 0
+EndFunc
