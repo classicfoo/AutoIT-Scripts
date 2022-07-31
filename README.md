@@ -18,4 +18,8 @@ press ctr + alt + n to create a new folder
 
 press ctrl + alt + w to wrap a file in a folder of the same name
 
+press ctrl + alt + a to show attributes column
+
+press ctrl + alt + r to toggle readonly status
+
 
